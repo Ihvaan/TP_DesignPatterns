@@ -1,0 +1,22 @@
+@startuml
+abstract class BaseAuthent {
+    + boolean authenticate()
+}
+
+class DecoratorOAuth extends BaseAuthent {
+    + boolean authenticate()
+}
+
+class DecoratorJWT extends BaseAuthent {
+    + boolean authenticate()
+}
+
+class DecoratorAPIKeys extends BaseAuthent {
+    + boolean authenticate()
+}
+
+class User {
+    - String login
+    - String password
+}
+@enduml

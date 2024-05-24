@@ -1,0 +1,23 @@
+@startuml
+abstract class Validator {
+    Validator next;
+    + setNext(next: Validator): void
+    + validate(data: String): boolean
+}
+
+class FormatValidator extends Validator {
+    + validate(data: String): boolean
+}
+
+class LengthValidator extends Validator {
+    + validate(data: String): boolean
+}
+
+class UnicityValidator extends Validator {
+    + validate(data: String): boolean
+}
+
+Validator <|-- FormatValidator
+Validator <|-- LengthValidator
+Validator <|-- UnicityValidator
+@enduml

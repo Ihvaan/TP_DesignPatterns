@@ -1,0 +1,24 @@
+@startuml
+abstract class FileSystemComponent {
+    + name: String
+    + add(component: FileSystemComponent)
+    + remove(component: FileSystemComponent)
+    + display(indentation: String)
+}
+
+class File extends FileSystemComponent {
+    + add(component: FileSystemComponent)
+    + remove(component: FileSystemComponent)
+    + display(indentation: String)
+}
+
+class Directory extends FileSystemComponent {
+    - components: List<FileSystemComponent>
+    + add(component: FileSystemComponent)
+    + remove(component: FileSystemComponent)
+    + display(indentation: String)
+}
+
+FileSystemComponent <|-- File
+FileSystemComponent <|-- Directory
+@enduml

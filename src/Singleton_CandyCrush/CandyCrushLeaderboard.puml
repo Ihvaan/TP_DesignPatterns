@@ -1,0 +1,11 @@
+@startuml
+class CandyCrushLeaderboard {
+    - Map<String, Integer> scores
+    - static CandyCrushLeaderboard instance
+    - CandyCrushLeaderboard()
+
+    + static CandyCrushLeaderboard getInstance()
+    + void addScore(String login, int score)
+    + Map<String, Integer> getScores()
+}
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+abstract class Button {
+    String text
+    abstract JButton toSwingButton()
+}
+
+abstract class Menu {
+    String text
+    abstract JMenu toSwingMenu()
+}
+
+interface GraphicalComponentFactory {
+    JFrame frame
+    Button createButton()
+    Menu createMenu()
+}
+
+class WindowsButton extends Button {
+    JButton toSwingButton()
+}
+
+class WindowsMenu extends Menu {
+    JMenu toSwingMenu()
+}
+
+class LinuxButton extends Button {
+    JButton toSwingButton()
+}
+
+class LinuxMenu extends Menu {
+    JMenu toSwingMenu()
+}
+
+class MacOSButton extends Button {
+    JButton toSwingButton()
+}
+
+class MacOSMenu extends Menu {
+    JMenu toSwingMenu()
+}
+@enduml
